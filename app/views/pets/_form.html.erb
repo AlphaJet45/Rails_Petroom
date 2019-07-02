@@ -1,0 +1,48 @@
+<%= form_with model: @pet, local: true do |form| %>
+
+    <% if @pet.errors.any? %>
+        <div id="error_explanation">
+        <h2>
+            <%= pluralize(@pet.errors.count, "error") %> prohibited
+            this pet from being saved:
+        </h2>
+        <ul>
+            <% @pet.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+ 
+  <p>
+    Name<br>
+    <%= form.text_field :name %>
+  </p>
+
+ <p>
+    Espece<br>
+    <%= form.text_field :espece %>
+  </p>
+
+    <p>
+    <%= radio_button_tag(:sexe, "Male") %>
+    <%= label_tag(:sexe_chat, "Male") %>
+    <%= radio_button_tag(:sexe, "Female") %>
+    <%= label_tag(:sexe_chat, "Femelle") %>
+    </p>
+
+    <p>
+    Age<br>
+    <%= number_field(:age, in: 1..99, step: 1) %>
+    </p>
+
+  <p>
+  Description<br>
+  <%= text_area_tag(:desc, "A good cat, like damien", size: "24x6") %> 
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>

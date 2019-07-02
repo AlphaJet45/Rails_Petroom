@@ -1,0 +1,17 @@
+
+<h1>Listing pets</h1>
+
+<%= link_to 'new', new_pet_path %>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+ 
+  <% @pets.each do |pet| %>
+    <tr>
+      <td><%= pet.name %></td>
+      <td><%= link_to 'profile', pet_path(pet) %></td>
+    </tr>
+  <% end %>
+</table>
