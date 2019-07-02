@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_12_140711) do
 
-  create_table "animals", force: :cascade do |t|
+  create_table "pets", force: :cascade do |t|
     t.string "name"
     t.string "espece"
     t.string "sexe"
