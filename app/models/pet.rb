@@ -1,4 +1,4 @@
-class Animal < ApplicationRecord
+class Pet < ApplicationRecord
     validates :name, presence: true, length: { minimum: 1 }
     validates :espece, presence: true
     validates :sexe, presence: true

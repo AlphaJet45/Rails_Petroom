@@ -1,14 +1,14 @@
 class PetsController < ApplicationController
     def new
-        @pet = Animal.new
+        @pet = Pet.new
     end
     
     def edit
-        @pet = Animal.find(params[:id])
+        @pet = Pet.find(params[:id])
     end
 
     def create
-        @pet = Animal.new(pet_params)
+        @pet = Pet.new(pet_params)
 
         if @pet.save
             redirect_to @pet
@@ -18,7 +18,7 @@ class PetsController < ApplicationController
     end
 
     def update
-        @pet = Animal.find(params[:id])
+        @pet = Pet.find(params[:id])
 
         if @pet.update(pet_params)
             redirect_to @pet
@@ -28,18 +28,18 @@ class PetsController < ApplicationController
     end
 
     def destroy
-        @pet = Animal.find(params[:id])
+        @pet = Pet.find(params[:id])
         @pet.destroy
 
         redirect_to pets_path
     end
 
     def index
-        @pets = Animal.all
+        @pets = Pet.all
     end
 
     def show
-        @pet = Animal.find(params[:id])
+        @pet = Pet.find(params[:id])
     end
 
     private
