@@ -1,15 +1,26 @@
 <h1>Listing pets</h1>
 
 <%= link_to 'new', new_pet_path %>
+
+<hr>
  
 <table>
   <tr>
     <th>Name</th>
+    <th>Sexe</th>
+    <th>Espece</th>
+    <th>Age</th>
+    <th>Description</th>
+    <th>Actions</th>
   </tr>
  
   <% @pets.each do |pet| %>
     <tr>
       <td><%= pet.name %></td>
+      <td><%= pet.sexe %></td>
+      <td><%= pet.espece %></td>
+      <td><%= pet.age %></td>
+      <td><%= pet.desc %></td>
       <td><%= link_to 'profile', pet_path(pet) %></td>
     </tr>
   <% end %>
